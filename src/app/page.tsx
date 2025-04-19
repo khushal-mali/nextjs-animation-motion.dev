@@ -1,20 +1,25 @@
 import Link from "next/link";
 import React from "react";
 
+const links = ["Transformations", "Transitions", "Keyframes", "Variants", "Gestures"];
+
 const Page = () => {
   return (
     <div className="text-white flex flex-col space-y-2">
-      <Link href={"/01-Transformations"} className="underline">
-        01. Transformations
-      </Link>
+      {links.map((link, i) => {
+        const index = i + 1;
+        const displayIndex = index < 10 ? `0${index}` : index;
 
-      <Link href={"/02-Transitions"} className="underline">
-        02. Transitions
-      </Link>
-
-      <Link href={"/03-Keyframes"} className="underline">
-        03. KeyFrames
-      </Link>
+        return (
+          <Link
+            key={displayIndex}
+            href={`/${displayIndex}-${link}`}
+            className="underline hover:no-underline"
+          >
+            {displayIndex}. {link}
+          </Link>
+        );
+      })}
     </div>
   );
 };
