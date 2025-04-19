@@ -26,13 +26,13 @@ const KeyFrames = () => {
             className="w-8 h-8 bg-teal-500 rounded-full"
             animate={{
               y: [0, -20, 0],
-              opacity: [0, 100],
+              opacity: [0, 100, 0],
             }}
             transition={{
-              duration: 1,
+              duration: 2,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: index * 0.2,
+              delay: index * 0.4,
             }}
           />
         ))}
